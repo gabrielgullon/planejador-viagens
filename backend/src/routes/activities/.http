@@ -1,0 +1,12 @@
+GET http://localhost:3333/trip/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/activities
+Content-Type: application/json
+
+###
+
+POST http://localhost:3333/trip/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/activities
+Content-Type: application/json
+
+{
+        "title":"Iron Maiden",
+        "occurs_at":"2024-11-27 18:00:00"
+}
