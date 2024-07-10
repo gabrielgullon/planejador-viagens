@@ -1,1 +1,5 @@
 GET http://localhost:3333/participants/2b3eea89-74be-4168-a1ec-b129f35f5f7e/confirm
+
+###
+
+GET http://localhost:3333/trip/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/participants
