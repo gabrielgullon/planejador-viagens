@@ -1,0 +1,11 @@
+GET http://localhost:3333/trip/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/links
+
+###
+
+POST http://localhost:3333/trip/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/links
+Content-Type: application/json
+
+{
+        "title":"Iron Maiden",
+        "url":"https://gullon.in"
+}

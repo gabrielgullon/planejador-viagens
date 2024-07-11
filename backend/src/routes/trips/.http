@@ -1,0 +1,34 @@
+POST http://localhost:3333/trips HTTP/1.1
+content-type: application/json
+
+{
+    "destination": "Santiago, CL",
+    "starts_at": "2024-07-20 18:00:00",
+    "ends_at": "2024-07-29 18:00:00",
+    "owner_name":"Gabriel",
+    "owner_email":"gabriel@email.com",
+    "emails_to_invite": ["eu@gmail.com", "teste@acme.com"]
+}
+
+###
+
+POST  env.API_BASE_URL/trips/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/invite HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"blyyyaaaaaaaaaaaaad@gmail.com"    
+}
+
+
+### 
+PUT http://localhost:3333/trips/d8081cf7-3958-4300-8dfd-bf18f5f3226f HTTP/1.1
+content-type: application/json
+
+{
+    "destination": "Toronto, CA",
+    "starts_at": "2024-10-20 18:00:00",
+    "ends_at": "2024-11-6 18:00:00"
+}
+
+### 
+GET http://localhost:3333/trips/d8081cf7-3958-4300-8dfd-bf18f5f3226f HTTP/1.1
