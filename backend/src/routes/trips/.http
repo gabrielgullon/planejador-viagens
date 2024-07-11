@@ -10,3 +10,11 @@ content-type: application/json
     "emails_to_invite": ["eu@gmail.com", "teste@acme.com"]
 }
 
+###
+
+POST  http://localhost:3333/trips/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/invite HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"blyyyaaaaaaaaaaaaad@gmail.com"    
+}
