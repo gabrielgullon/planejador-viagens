@@ -30,7 +30,7 @@ export async function confirmTrip(app: FastifyInstance) {
       if (!trip) throw new ClientError("Trip not found");
 
       if (trip.is_confirmed)
-        return reply.redirect(`http://localhost:3000/trips/${tripId}`);
+        return reply.redirect(`${env.WEB_BASE_URL}/trips/${tripId}`);
 
       await prisma.trip.update({
         where: { id: tripId },
@@ -79,7 +79,7 @@ export async function confirmTrip(app: FastifyInstance) {
         })
       );
 
-      return reply.redirect(`http://localhost:3000/trips/${tripId}`);
+      return reply.redirect(`${env.WEB_BASE_URL}/trips/${tripId}`);
     }
   );
 }
