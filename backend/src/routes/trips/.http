@@ -12,7 +12,7 @@ content-type: application/json
 
 ###
 
-POST  http://localhost:3333/trips/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/invite HTTP/1.1
+POST  env.API_BASE_URL/trips/01c50ee8-9205-4fdc-aeb9-41e147fd9f8b/invite HTTP/1.1
 Content-Type: application/json
 
 {
