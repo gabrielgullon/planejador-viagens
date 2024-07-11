@@ -18,3 +18,17 @@ Content-Type: application/json
 {
     "email":"blyyyaaaaaaaaaaaaad@gmail.com"    
 }
+
+
+### 
+PUT http://localhost:3333/trips/d8081cf7-3958-4300-8dfd-bf18f5f3226f HTTP/1.1
+content-type: application/json
+
+{
+    "destination": "Toronto, CA",
+    "starts_at": "2024-10-20 18:00:00",
+    "ends_at": "2024-11-6 18:00:00"
+}
+
+### 
+GET http://localhost:3333/trips/d8081cf7-3958-4300-8dfd-bf18f5f3226f HTTP/1.1
