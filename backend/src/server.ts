@@ -17,11 +17,14 @@ import { inviteToTrip } from "./routes/trips/invite-to-trip";
 import { updateTrip } from "./routes/trips/update-trip";
 import { getTripDetails } from "./routes/trips/get-trip-details";
 import { getParticipant } from "./routes/participants/get-participant";
+import { errorHandler } from "./error-handler";
 
 const app = fastify();
 
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
+
+app.setErrorHandler(errorHandler);
 
 app.register(cors, { origin: "*" });
 app.register(createTrip);

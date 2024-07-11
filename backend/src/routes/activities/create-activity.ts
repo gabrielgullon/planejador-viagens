@@ -1,10 +1,9 @@
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
-import nodemailer from "nodemailer";
 import { z } from "zod";
 import { dayjs } from "../../lib/dayjs";
-import { getMailClient } from "../../lib/mail";
 import { prisma } from "../../lib/prisma";
+import { ClientError } from "../../errors/client-error";
 
 export async function createActivity(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
@@ -26,13 +25,13 @@ export async function createActivity(app: FastifyInstance) {
         where: { id: tripId },
       });
 
-      if (!trip) throw new Error("Trip not found");
+      if (!trip) throw new ClientError("Trip not found");
 
       if (dayjs(occurs_at).isBefore(trip.starts_at))
-        throw new Error("Activity date must be after trip start");
+        throw new ClientError("Activity date must be after trip start");
 
       if (dayjs(occurs_at).isAfter(trip.ends_at))
-        throw new Error("Activity date must be before trip end");
+        throw new ClientError("Activity date must be before trip end");
 
       const activity = await prisma.activity.create({
         data: { title, occurs_at, trip_id: tripId },
